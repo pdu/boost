@@ -119,6 +119,17 @@ boost_library(
 )
 
 boost_library(
+    name = "dynamic_bitset",
+    deps = [
+        ":detail",
+        ":move",
+        ":utility",
+        ":static_assert",
+        ":throw_exception",
+    ],
+)
+
+boost_library(
     name = "exception",
     defines = [
         "BOOST_NO_CXX11_RVALUE_REFERENCES",
