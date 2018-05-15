@@ -134,6 +134,9 @@ boost_library(
     defines = [
         "BOOST_NO_CXX11_RVALUE_REFERENCES",
     ],
+    deps = [
+        ":tuple",
+    ],
 )
 
 boost_library(
