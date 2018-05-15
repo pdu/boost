@@ -406,6 +406,7 @@ boost_library(
     deps = [
         ":core",
         ":functional",
+        ":static_assert",
     ],
 )
 
