@@ -407,6 +407,7 @@ boost_library(
         ":core",
         ":functional",
         ":static_assert",
+        ":throw_exception",
     ],
 )
 
