@@ -2,7 +2,7 @@
 
 # Clone the following directories from boostorg and checkout a selected tag.
 
-DIRS="algorithm align asio any assert atomic bind chrono concept_check config \
+DIRS="algorithm align asio any array assert atomic bind chrono concept_check config \
 container context conversion core date_time detail dynamic_bitset exception \
 filesystem foreach format function functional function_types fusion heap \
 integer interprocess intrusive io iterator lexical_cast move mpl msm \

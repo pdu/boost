@@ -31,6 +31,19 @@ boost_library(
 )
 
 boost_library(
+    name = "array",
+    deps = [
+        ":assert",
+        ":static_assert",
+        ":core",
+        ":detail",
+        ":throw_exception",
+        ":algorithm",
+        ":config",
+    ],
+)
+
+boost_library(
     name = "asio",
     deps = [
         ":bind",
