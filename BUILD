@@ -411,6 +411,7 @@ boost_library(
         ":functional",
         ":static_assert",
         ":throw_exception",
+        ":type_traits",
     ],
 )
 
