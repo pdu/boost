@@ -238,6 +238,14 @@ boost_library(
 )
 
 boost_library(
+    name = "lexical_cast",
+    deps = [
+        ":config",
+        ":range",
+    ],
+)
+
+boost_library(
     name = "move",
     deps = [
         ":static_assert",
