@@ -1,6 +1,8 @@
 includes_pattern = "%s/include"
 include_pattern1 = includes_pattern + "/boost/**/*.h"
 include_pattern2 = includes_pattern + "/boost/**/*pp"
+include_pattern3 = includes_pattern + "/boost/*h"
+include_pattern4 = includes_pattern + "/boost/*pp"
 
 def includes_list( library_name ):
   return [ includes_pattern % library_name ]
@@ -9,6 +11,8 @@ def hdr_list( library_name ):
   return native.glob([
     include_pattern1 % library_name,
     include_pattern2 % library_name,
+    include_pattern3 % library_name,
+    include_pattern4 % library_name,
   ])
 
 def boost_library( name, defines=None, includes=None, hdrs=None, srcs=None, deps=None, copts=None ):
