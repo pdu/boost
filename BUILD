@@ -161,6 +161,14 @@ boost_library(
 )
 
 boost_library(
+    name = "format",
+    deps = [
+        ":config",
+        ":detail",
+    ],
+)
+
+boost_library(
     name = "function",
     deps = [
         ":bind",

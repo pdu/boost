@@ -4,7 +4,7 @@
 
 DIRS="algorithm align asio any assert atomic bind chrono concept_check config \
 container context conversion core date_time detail dynamic_bitset exception \
-filesystem foreach function functional function_types fusion heap \
+filesystem foreach format function functional function_types fusion heap \
 integer interprocess intrusive io iterator lexical_cast move mpl msm \
 multi_index optional parameter predef preprocessor range ratio regex \
 serialization smart_ptr static_assert system thread throw_exception \
