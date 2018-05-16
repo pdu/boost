@@ -66,6 +66,10 @@ boost_library(
 
 boost_library(
     name = "atomic",
+    deps = [
+        ":assert",
+        ":config",
+    ],
 )
 
 boost_library(
@@ -75,7 +79,13 @@ boost_library(
 boost_library(
     name = "chrono",
     deps = [
+        ":config",
+        ":mpl",
+        ":predef",
         ":ratio",
+        ":utility",
+        ":system",
+        ":throw_exception",
     ],
 )
 
@@ -259,10 +269,35 @@ boost_library(
     name = "lexical_cast",
     deps = [
         ":array",
+        ":chrono",
         ":config",
         ":container",
+        ":detail",
+        ":integer",
+        # ":math",
+        ":mpl",
         ":numeric_conversion",
         ":range",
+        ":static_assert",
+        ":throw_exception",
+        ":type_traits",
+    ],
+)
+
+boost_library(
+    name = "math",
+    deps = [
+        ":assert",
+        ":array",
+        ":atomic",
+        ":config",
+        ":format",
+        ":lexical_cast",
+        ":static_assert",
+        ":type_traits",
+    ],
+    includes = [
+        "math/src/tr1/",
     ],
 )
 
@@ -354,6 +389,10 @@ boost_library(
 
 boost_library(
     name = "ratio",
+    deps = [
+        ":integer",
+        ":type_traits",
+    ],
 )
 
 boost_library(
