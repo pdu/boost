@@ -392,6 +392,9 @@ boost_library(
 
 boost_library(
     name = "throw_exception",
+    deps = [
+        ":assert",
+    ],
 )
 
 boost_library(
