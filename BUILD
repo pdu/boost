@@ -263,6 +263,7 @@ boost_library(
 boost_library(
     name = "lexical_cast",
     deps = [
+        ":array",
         ":config",
         ":numeric_conversion",
         ":range",
