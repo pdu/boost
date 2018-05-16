@@ -160,6 +160,7 @@ boost_library(
         "BOOST_NO_CXX11_RVALUE_REFERENCES",
     ],
     deps = [
+        ":config",
         ":tuple",
     ],
 )
