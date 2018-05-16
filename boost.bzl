@@ -11,8 +11,6 @@ def hdr_list( library_name ):
   return native.glob([
     include_pattern1 % library_name,
     include_pattern2 % library_name,
-    include_pattern3 % library_name,
-    include_pattern4 % library_name,
   ])
 
 def src_list( library_name ):
