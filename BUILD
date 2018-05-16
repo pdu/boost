@@ -265,6 +265,7 @@ boost_library(
     deps = [
         ":array",
         ":config",
+        ":container",
         ":numeric_conversion",
         ":range",
     ],
