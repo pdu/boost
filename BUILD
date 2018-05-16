@@ -98,9 +98,7 @@ CONTEXT_K8_LINUX_ASM = [
 
 boost_library(
     name = "context",
-    srcs = [
-        "context/src/execution_context.cpp",
-    ] + CONTEXT_K8_LINUX_ASM,
+    srcs = [] + CONTEXT_K8_LINUX_ASM,
     copts = [
         "-fsplit-stack",
         "-DBOOST_USE_SEGMENTED_STACKS",
@@ -155,9 +153,6 @@ boost_library(
 
 boost_library(
     name = "filesystem",
-    srcs = glob([
-        "filesystem/src/*.cpp",
-    ]),
     deps = [
         ":config",
         ":detail",
@@ -363,10 +358,6 @@ boost_library(
 
 boost_library(
     name = "regex",
-    srcs = glob([
-        "regex/src/*.cpp",
-        "regex/src/*.hpp",
-    ]),
     defines = [
         "BOOST_FALLTHROUGH",
     ],
@@ -403,9 +394,6 @@ boost_library(
 
 boost_library(
     name = "system",
-    srcs = glob([
-        "system/src/*.cpp",
-    ]),
     deps = [
         ":assert",
         ":config",
