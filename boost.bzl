@@ -1,11 +1,15 @@
 includes_pattern = "%s/include"
+srcs_pattern = "%s/src"
 include_pattern1 = includes_pattern + "/boost/**/*h"
 include_pattern2 = includes_pattern + "/boost/**/*pp"
-src_pattern1 = "%s/src/**/*c"
-src_pattern2 = "%s/src/**/*pp"
+src_pattern1 = srcs_pattern + "/**/*cpp"
+src_pattern2 = srcs_pattern + "/**/*hpp"
 
 def includes_list( library_name ):
-  return [ includes_pattern % library_name ]
+  return [ 
+    includes_pattern % library_name,
+    srcs_pattern % library_name,
+  ]
 
 def hdr_list( library_name ):
   return native.glob([
