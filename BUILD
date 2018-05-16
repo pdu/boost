@@ -251,6 +251,7 @@ boost_library(
     name = "lexical_cast",
     deps = [
         ":config",
+        ":numeric_conversion",
         ":range",
     ],
 )
@@ -300,6 +301,13 @@ boost_library(
         ":serialization",
         ":static_assert",
         ":tuple",
+    ],
+)
+
+boost_library(
+    name = "numeric_conversion",
+    deps = [
+        ":conversion",
     ],
 )
 
