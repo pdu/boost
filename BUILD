@@ -147,6 +147,7 @@ boost_library(
     ]),
     deps = [
         ":config",
+        ":detail",
         ":functional",
         ":io",
         ":iterator",
