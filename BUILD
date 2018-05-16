@@ -12,6 +12,7 @@ boost_library(
         ":iterator",
         ":mpl",
         ":range",
+        ":regex",
         ":throw_exception",
         ":type_traits",
         ":utility",
