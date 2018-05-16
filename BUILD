@@ -1,6 +1,9 @@
 licenses(["notice"])
 
 load(":boost.bzl", "boost_library")
+load(":boost.bzl", "includes_list")
+load(":boost.bzl", "src_list")
+load(":boost.bzl", "hdr_list")
 
 boost_library(
     name = "algorithm",
@@ -266,15 +269,17 @@ boost_library(
 )
 
 boost_library(
-    name = "lexical_cast",
+    name = "lexical_cast_and_math",
     deps = [
+        ":assert",
         ":array",
+        ":atomic",
         ":chrono",
         ":config",
         ":container",
         ":detail",
+        ":format",
         ":integer",
-        # ":math",
         ":mpl",
         ":numeric_conversion",
         ":range",
@@ -282,23 +287,11 @@ boost_library(
         ":throw_exception",
         ":type_traits",
     ],
-)
-
-boost_library(
-    name = "math",
-    deps = [
-        ":assert",
-        ":array",
-        ":atomic",
-        ":config",
-        ":format",
-        ":lexical_cast",
-        ":static_assert",
-        ":type_traits",
-    ],
     includes = [
         "math/src/tr1/",
-    ],
+    ] + includes_list("lexical_cast") + includes_list("math"),
+    srcs = src_list("lexical_cast") + src_list("math"),
+    hdrs = hdr_list("lexical_cast") + hdr_list("math"),
 )
 
 boost_library(
