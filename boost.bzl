@@ -1,8 +1,8 @@
 includes_pattern = "%s/include"
 include_pattern1 = includes_pattern + "/boost/**/*.h"
-include_pattern2 = includes_pattern + "/boost/**/*pp"
-include_pattern3 = includes_pattern + "/boost/*h"
-include_pattern4 = includes_pattern + "/boost/*pp"
+include_pattern2 = includes_pattern + "/boost/**/*.hpp"
+include_pattern3 = includes_pattern + "/boost/*.h"
+include_pattern4 = includes_pattern + "/boost/*.hpp"
 
 def includes_list( library_name ):
   return [ includes_pattern % library_name ]
