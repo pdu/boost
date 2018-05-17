@@ -303,6 +303,10 @@ boost_library(
 )
 
 boost_library(
+    name = "mpi",
+)
+
+boost_library(
     name = "mpl",
     deps = [
         ":move",
