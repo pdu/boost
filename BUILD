@@ -104,6 +104,10 @@ boost_library(
     name = "container",
 )
 
+boost_library(
+    name = "container_hash",
+)
+
 CONTEXT_K8_LINUX_ASM = [
     "context/src/asm/jump_x86_64_sysv_elf_gas.S",
     "context/src/asm/make_x86_64_sysv_elf_gas.S",
@@ -198,6 +202,7 @@ boost_library(
         ":bind",
         ":integer",
         ":throw_exception",
+        ":type_index",
     ],
 )
 
@@ -304,6 +309,10 @@ boost_library(
 
 boost_library(
     name = "mpi",
+    deps = [
+        ":serialization",
+        ":python",
+    ],
 )
 
 boost_library(
@@ -378,6 +387,10 @@ boost_library(
 )
 
 boost_library(
+    name = "python",
+)
+
+boost_library(
     name = "range",
     deps = [
         ":concept_check",
@@ -401,6 +414,7 @@ boost_library(
     deps = [
         ":assert",
         ":config",
+        ":container_hash",
         ":functional",
         ":integer",
         ":mpl",
@@ -412,6 +426,22 @@ boost_library(
 
 boost_library(
     name = "serialization",
+    deps = [
+        ":assert",
+        ":array",
+        ":config",
+        ":core",
+        ":integer",
+        ":io",
+        ":iterator",
+        ":mpl",
+        ":preprocessor",
+        ":smart_ptr",
+        ":static_assert",
+        ":spirit",
+        ":type_traits",
+        ":utility",
+    ],
 )
 
 boost_library(
@@ -420,8 +450,16 @@ boost_library(
         ":align",
         ":core",
         ":predef",
+        ":spirit",
         ":throw_exception",
         ":utility",
+    ],
+)
+
+boost_library(
+    name = "spirit",
+    deps = [
+        ":optional",
     ],
 )
 
