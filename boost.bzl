@@ -21,7 +21,7 @@ def src_list( library_name ):
     src_pattern1 % library_name,
   ])
 
-def boost_library( name, defines=None, includes=None, hdrs=None, srcs=None, deps=None, copts=None ):
+def boost_library( name, defines=None, includes=None, hdrs=None, srcs=None, deps=None, copts=None, linkopts=None ):
 
   if defines == None:
     defines = []
@@ -41,6 +41,9 @@ def boost_library( name, defines=None, includes=None, hdrs=None, srcs=None, deps
   if copts == None:
     copts = []
 
+  if linkopts == None:
+    linkopts = []
+
   return native.cc_library(
     name = name,
     visibility = ["//visibility:public"],
@@ -50,4 +53,5 @@ def boost_library( name, defines=None, includes=None, hdrs=None, srcs=None, deps
     srcs = src_list(name) + srcs,
     deps = deps,
     copts = copts,
+    linkopts = linkopts
   )

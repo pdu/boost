@@ -4,11 +4,11 @@
 
 DIRS="algorithm align asio any array assert atomic bind chrono concept_check config \
 container container_hash context conversion core date_time detail dynamic_bitset exception \
-filesystem foreach format function functional function_types fusion heap \
+filesystem foreach format function functional function_types fusion graph heap \
 integer interprocess intrusive io iterator lexical_cast math move mpi mpl msm \
-multi_index numeric_conversion optional parameter predef preprocessor python range ratio regex \
+multi_index numeric_conversion optional parameter predef preprocessor property_map property_tree proto python range ratio regex \
 serialization smart_ptr spirit static_assert system thread throw_exception \
-tuple type_index type_traits utility"
+tuple type_index type_traits typeof unordered utility xpressive"
 
 for i in $DIRS;
 do

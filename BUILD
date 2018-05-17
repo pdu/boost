@@ -102,6 +102,12 @@ boost_library(
 
 boost_library(
     name = "container",
+    deps = [
+        ":config",
+        ":core",
+        ":move",
+        ":intrusive",
+    ],
 )
 
 boost_library(
@@ -186,6 +192,10 @@ boost_library(
 
 boost_library(
     name = "foreach",
+    deps = [
+        ":mpl",
+        ":range",
+    ],
 )
 
 boost_library(
@@ -227,6 +237,25 @@ boost_library(
 )
 
 boost_library(
+    name = "graph",
+    deps = [
+        ":assert",
+        ":any",
+        ":core",
+        ":foreach",
+        ":function",
+        ":multi_index",
+        ":lexical_cast_and_math",
+        ":property_map",
+        ":property_tree",
+        ":tuple",
+        ":typeof",
+        ":unordered",
+        ":xpressive",
+    ],
+)
+
+boost_library(
     name = "heap",
     deps = [
         ":parameter",
@@ -258,6 +287,7 @@ boost_library(
     name = "iterator",
     deps = [
         ":detail",
+        ":fusion",
         ":static_assert",
     ],
 )
@@ -303,6 +333,7 @@ boost_library(
 boost_library(
     name = "move",
     deps = [
+        ":assert",
         ":static_assert",
     ],
 )
@@ -313,6 +344,8 @@ boost_library(
         ":serialization",
         ":python",
     ],
+    copts = ["-I/usr/lib/openmpi/include/openmpi/opal/mca/event/libevent2021/libevent -I/usr/lib/openmpi/include/openmpi/opal/mca/event/libevent2021/libevent/include -I/usr/lib/openmpi/include -I/usr/lib/openmpi/include/openmpi -pthread"],
+    linkopts = ["-pthread -Wl,-rpath -Wl,/usr/lib/openmpi/lib -Wl,--enable-new-dtags -L/usr/lib/openmpi/lib -lmpi"],
 )
 
 boost_library(
@@ -365,6 +398,9 @@ boost_library(
 
 boost_library(
     name = "optional",
+    deps = [
+        ":utility",
+    ],
 )
 
 boost_library(
@@ -380,6 +416,14 @@ boost_library(
 )
 
 boost_library(
+    name = "property_map",
+)
+
+boost_library(
+    name = "property_tree",
+)
+
+boost_library(
     name = "proto",
     deps = [
         ":typeof",
@@ -388,12 +432,29 @@ boost_library(
 
 boost_library(
     name = "python",
+    copts = [
+        "-I/usr/include/python2.7/",
+    ],
+    deps = [
+        ":config",
+        ":conversion",
+        ":core",
+        ":function",
+        ":graph",
+        ":mpl",
+        ":iterator",
+        ":numeric_conversion",
+        ":smart_ptr",
+        ":type_traits",
+        ":utility",
+    ],
 )
 
 boost_library(
     name = "range",
     deps = [
         ":concept_check",
+        ":iterator",
         ":optional",
     ],
 )
@@ -511,6 +572,7 @@ boost_library(
 boost_library(
     name = "type_index",
     deps = [
+        ":container_hash",
         ":core",
         ":functional",
         ":static_assert",
@@ -543,9 +605,21 @@ boost_library(
 )
 
 boost_library(
+    name = "unordered",
+)
+
+boost_library(
     name = "utility",
 )
 
 boost_library(
     name = "version",
+)
+
+boost_library(
+    name = "xpressive",
+    deps = [
+        ":exception",
+        ":proto",
+    ],
 )
