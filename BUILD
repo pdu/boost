@@ -246,6 +246,7 @@ boost_library(
         ":function",
         ":multi_index",
         ":lexical_cast_and_math",
+        ":parameter",
         ":property_map",
         ":property_tree",
         ":tuple",
@@ -432,9 +433,6 @@ boost_library(
 
 boost_library(
     name = "python",
-    copts = [
-        "-I/usr/include/python2.7/",
-    ],
     deps = [
         ":config",
         ":conversion",
@@ -447,6 +445,12 @@ boost_library(
         ":smart_ptr",
         ":type_traits",
         ":utility",
+        "@pythondev//:header",
+        "@numpy//:header",
+    ],
+    copts = [
+        "-Iexternal/pythondev",
+        "-Iexternal/numpy",
     ],
 )
 
