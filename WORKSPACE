@@ -11,3 +11,9 @@ new_local_repository(
     path = "/usr/lib/python2.7/dist-packages/numpy/core/include/",
     build_file = "numpy.BUILD",
 )
+
+new_local_repository(
+    name = "mpidev",
+    path = "/usr/lib/openmpi/include/",
+    build_file = "mpidev.BUILD",
+)

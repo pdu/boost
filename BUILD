@@ -344,9 +344,18 @@ boost_library(
     deps = [
         ":serialization",
         ":python",
+        "@mpidev//:header",
+        "@pythondev//:header",
+        "@numpy//:header",
     ],
-    copts = ["-I/usr/lib/openmpi/include/openmpi/opal/mca/event/libevent2021/libevent -I/usr/lib/openmpi/include/openmpi/opal/mca/event/libevent2021/libevent/include -I/usr/lib/openmpi/include -I/usr/lib/openmpi/include/openmpi -pthread"],
-    linkopts = ["-pthread -Wl,-rpath -Wl,/usr/lib/openmpi/lib -Wl,--enable-new-dtags -L/usr/lib/openmpi/lib -lmpi"],
+    copts = [
+        "-Iexternal/pythondev",
+        "-Iexternal/numpy",
+        "-Iexternal/mpidev",
+    ],
+    linkopts = [
+        "-lmpi",
+    ],
 )
 
 boost_library(
