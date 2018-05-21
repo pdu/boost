@@ -145,7 +145,12 @@ boost_library(
 boost_library(
     name = "date_time",
     deps = [
+        ":io",
+        ":lexical_cast_and_math",
+        ":mpl",
         ":smart_ptr",
+        ":type_traits",
+        ":tokenizer",
     ],
 )
 
@@ -179,6 +184,7 @@ boost_library(
     name = "filesystem",
     deps = [
         ":config",
+        ":container_hash",
         ":detail",
         ":functional",
         ":io",
@@ -605,6 +611,10 @@ boost_library(
 
 boost_library(
     name = "tuple",
+)
+
+boost_library(
+    name = "tokenizer",
 )
 
 boost_library(
