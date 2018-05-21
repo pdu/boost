@@ -27,13 +27,13 @@ def boost_library( name, defines=None, includes=None, hdrs=None, srcs=None, deps
     defines = []
 
   if includes == None:
-    includes = []
+    includes = includes_list(name)
 
   if hdrs == None:
-    hdrs = []
+    hdrs = hdr_list(name)
 
   if srcs == None:
-    srcs = []
+    srcs = src_list(name)
 
   if deps == None:
     deps = []
@@ -48,9 +48,9 @@ def boost_library( name, defines=None, includes=None, hdrs=None, srcs=None, deps
     name = name,
     visibility = ["//visibility:public"],
     defines = defines,
-    includes = includes_list(name) + includes,
-    hdrs = hdr_list(name) + hdrs,
-    srcs = src_list(name) + srcs,
+    includes = includes,
+    hdrs = hdrs,
+    srcs = srcs,
     deps = deps,
     copts = copts,
     linkopts = linkopts

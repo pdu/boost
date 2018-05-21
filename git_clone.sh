@@ -19,5 +19,3 @@ do
     git checkout boost-1.67.0
     popd
 done
-
-

@@ -563,6 +563,18 @@ boost_library(
         "BOOST_NO_CXX11_RVALUE_REFERENCES",
         "BOOST_NO_CXX11_SMART_PTR",
     ],
+    srcs = [],
+    hdrs = glob([
+        "thread/include/**/*h",
+        "thread/include/**/*pp",
+        "thread/src/*.cpp",
+        "thread/src/pthread/*.cpp",
+    ]),
+    includes = [
+        "thread/include",
+        "thread/src",
+        "thread/src/pthread",
+    ],
     deps = [
         ":atomic",
         ":chrono",
