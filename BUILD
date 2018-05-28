@@ -648,6 +648,10 @@ boost_library(
 )
 
 boost_library(
+    name = "uuid",
+)
+
+boost_library(
     name = "version",
 )
 
